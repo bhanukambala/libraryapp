@@ -1,18 +1,25 @@
 package org.dxctraining.ui;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
 import java.util.*;
 
 import org.dxctraining.exceptions.*;
 import org.dxctraining.entities.*;
 import org.dxctraining.service.*;
+import org.dxctraining.*;
 
-
+@Component
 public class BookMain {
+	@Autowired
 	private IBookService service=new BookServiceImpl();
 	public static void main(String[] args) {
 		BookMain demo = new BookMain();
 		demo.runApp();
 	}
+	@PostConstruct
 	public void runApp() {
 		try {
 			Author a1= new Author("h1","stephen king");
