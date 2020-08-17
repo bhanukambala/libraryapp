@@ -14,8 +14,6 @@ import java.util.*;
 	
 	private Map<String,Book> store=	BookStore.getStore();
 	
-	@PersistenceContext
-	private EntityManager entityManager;
 	
 	@Id
 		private int generateid;
